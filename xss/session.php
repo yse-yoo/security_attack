@@ -28,11 +28,18 @@ if (isset($_POST["email"])) {
                         var value = content[1].trim();
                         sessions[key] = value;
                     });
-                    document.getElementById('result').innerHTML = sessions.PHPSESSID;
+                    var p = document.createElement('p');
+                    p.innerHTML = cookies;
+                    document.getElementById('result').append(p);
+
+                    var p = document.createElement('p');
+                    p.id = 'php-session';
+                    p.innerHTML = sessions.PHPSESSID;
+                    document.getElementById('result').append(p);
                     &lt;/script&gt;
                 </li>
                 <li>
-                    
+
                 </li>
             </ul>
             <h2 class="h2 mb-3 fw-normal text-center">Search Email</h2>
